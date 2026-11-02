@@ -1,0 +1,17 @@
+제목과 구조화된 원문이 다루는 주제에 맞는 새로운 댓글을 작성하시오.
+원문의 표현, 주장, 태도와 문장 구조를 유지할 필요는 없다.
+댓글은 label rules에 따라 목표 label을 명확하게 만족해야 한다.
+
+Label rules:
+{label_rules}
+
+구조화된 원문:
+{source_structure}
+
+Target label: "{target_label_display}"
+
+목표 label을 위한 필수 조건:
+{target_guidance}
+
+제목이나 설명을 출력하지 말고 자연스러운 한국어 댓글만 text에 넣어 JSON으로 출력하시오.
+{{"text": "...", "label": "{target_label}"}}

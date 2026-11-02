@@ -1,0 +1,26 @@
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+*.out
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime outputs and downloaded model artifacts
+results/runs/
+results/logs/
+results/supervised/
+results/downloads/
+checkpoints/
+*.bin
+*.pt
+*.pth
+*.safetensors
+
+# Local copies of the externally distributed full dataset
+data/kold/
+
+# Machine-specific launchers retained locally for provenance only
+archive/cluster_scripts/

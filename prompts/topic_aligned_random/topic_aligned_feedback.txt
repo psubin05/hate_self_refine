@@ -1,0 +1,24 @@
+구조화된 원문과 candidate를 비교하고 candidate 자체를 독립적으로 판정하시오.
+목표 label을 추측하지 말고 candidate에 실제로 나타난 표현만 근거로 사용하시오.
+
+Label rules:
+{label_rules}
+
+구조화된 원문:
+{source_structure}
+
+Candidate:
+"{candidate_text}"
+
+판정 기준:
+- OFF는 OFF 또는 NOT 중 정확히 하나이다.
+- TGT는 UNT, IND, GRP, OTH 중 정확히 하나이다.
+- OFF_span과 TGT_span은 candidate에 그대로 존재하는 연속 문자열이어야 한다. 해당 span이 없으면 "없음"이다.
+- topic_aligned는 candidate가 제목과 원문이 다루는 주제를 직접 다루는지 판정한다.
+- context_compatible은 candidate의 대상과 내용이 주어진 제목 및 원문 문맥에서 자연스러운지 판정한다.
+- fluent는 candidate가 완결되고 자연스러운 한국어 댓글인지 판정한다.
+- unsupported_specific_fact는 원문에 없는 구체적인 인명, 기관명, 사건, 수치 또는 사실을 만들어낸 경우에만 true이다. 목표 label을 위한 태도나 공격 표현의 변화 자체는 이에 해당하지 않는다.
+- feedback에는 false 판정이나 구조 오류의 이유를 짧게 작성한다.
+
+다음 키를 모두 포함하는 JSON 객체만 출력하시오. 허용값 설명이나 선택지를 값으로 복사하지 마시오.
+OFF, OFF_span, TGT, TGT_span, topic_aligned, context_compatible, fluent, unsupported_specific_fact, feedback

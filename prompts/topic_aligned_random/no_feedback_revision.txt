@@ -1,0 +1,20 @@
+이전 candidate를 목표 label에 맞게 수정하여 댓글을 다시 작성하시오.
+원문의 표현이나 주장을 유지할 필요는 없으며 댓글 전체를 새로 작성해도 된다.
+제목과 구조화된 원문이 다루는 주제에 맞고, label rules에 따라 목표 label을 명확하게 만족해야 한다.
+
+Label rules:
+{label_rules}
+
+구조화된 원문:
+{source_structure}
+
+이전 candidate:
+"{candidate_text}"
+
+Target label: "{target_label_display}"
+
+목표 label을 위한 필수 조건:
+{target_guidance}
+
+제목이나 설명을 출력하지 말고 자연스러운 한국어 댓글만 text에 넣어 JSON으로 출력하시오.
+{{"text": "...", "label": "{target_label}"}}

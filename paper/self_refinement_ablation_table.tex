@@ -1,0 +1,40 @@
+% Insert this block after the last paragraph of "실험 설정" and before
+% the main-results subsection/table.
+\subsection{자기 정제 단계 분석}
+
+비평 피드백의 효과를 분리하기 위해 동일한 초기 생성문을 사용하여
+(1) 초기 생성문을 그대로 사용하는 설정, (2) 비평 피드백 없이 모든
+생성문을 한 차례 수정하는 설정, (3) 비평 결과에 따라 생성문을
+수정하는 제안 방법을 비교하였다. 나머지 추론 조건은 동일하게
+유지하였다.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{방법} & \textbf{Accuracy} & \textbf{Macro-F1}
+& \textbf{정상 F1} & \textbf{공격적 F1} & \textbf{혐오 F1} \\
+\midrule
+Regular ICL                 & 0.4380 & 0.4039 & 0.5870 & 0.4065 & 0.2181 \\
+(1) 정제 없이 변환 초안    & 0.4509 & 0.4450 & 0.5491 & 0.4020 & 0.3840 \\
+(2) 비평 없이 일괄 수정    & 0.4452 & 0.4411 & 0.5375 & 0.3981 & \textbf{0.3876} \\
+\textbf{(3) 제안 방법}      & \textbf{0.4751} & \textbf{0.4636}
+                            & \textbf{0.5991} & \textbf{0.4100} & 0.3818 \\
+\bottomrule
+\end{tabular}
+\caption{자기 정제 단계 구성에 따른 Qwen3-8B의 성능. 세 설정은
+동일한 초기 생성문을 사용한다.}
+\label{tab:self_refinement_ablation}
+\end{table*}
+
+표~\ref{tab:self_refinement_ablation}에서 피드백 없이 생성문을 일괄
+수정한 설정은 변환 초안을 그대로 사용한 설정보다 Macro-F1이
+0.39\%p 낮아, 추가적인 수정 자체가 전반적인 성능을 높이지는 않았다.
+제안 방법은 변환 초안과 피드백 없는 수정 대비 Macro-F1을 각각
+1.86\%p와 2.25\%p 향상시켰으며, Accuracy와 정상 및 공격적 클래스
+F1에서도 가장 높은 성능을 보였다. 혐오 클래스 F1은 피드백 없는 수정
+설정이 가장 높았으며, 제안 방법은 세 변환 설정 중 가장 낮았다. 즉,
+제안 방법의 Macro-F1 향상은 주로 정상 및 공격적 클래스의 성능
+향상에서 비롯되었다.
