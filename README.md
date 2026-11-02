@@ -8,6 +8,10 @@ and full-precision metric files used in the paper. Model weights, the KOLD
 dataset, predictions, caches, checkpoints, and execution logs are not
 redistributed.
 
+<p align="center">
+  <img src="assets/method_overview.png" alt="Overview of the Hate Self-Refine method" width="100%">
+</p>
+
 ## Repository layout
 
 ```text
